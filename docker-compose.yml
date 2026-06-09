@@ -1,0 +1,8 @@
+services:
+  polaris:
+    build: .
+    image: polaris-doposcuola:latest
+    container_name: polaris-doposcuola
+    ports:
+      - "8080:80"
+    restart: unless-stopped

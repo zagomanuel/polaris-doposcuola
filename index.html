@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Polaris · Doposcuola a Bolzano — Compiti, Materie & Crescita</title>
+<meta name="description" content="Doposcuola di qualità a Bolzano (Alto Adige). Aiuto compiti bilingue italiano/tedesco, laboratori creativi, supporto BES e tutte le materie. Per ragazzi delle medie e superiori." />
+<meta name="theme-color" content="#FFF6EC" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="Polaris · Doposcuola a Bolzano" />
+<meta property="og:description" content="Aiuto compiti bilingue IT/DE, laboratori creativi e crescita serena nel cuore di Bolzano." />
+<meta property="og:type" content="website" />
+
+<!-- Fonts: Fredoka (display) + Nunito (body) -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        fontFamily: {
+          heading: ['Bricolage Grotesque', 'sans-serif'],
+          body: ['Manrope', 'sans-serif'],
+        },
+        fontWeight: { 400: '400', 500: '500', 600: '600', 700: '700', 800: '800' },
+        colors: {
+          cream:   'rgb(var(--c-cream) / <alpha-value>)',
+          surface: 'rgb(var(--c-surface) / <alpha-value>)',
+          ink:     'rgb(var(--c-ink) / <alpha-value>)',
+          inksoft: 'rgb(var(--c-inksoft) / <alpha-value>)',
+          indigo:  { DEFAULT: 'rgb(var(--c-indigo) / <alpha-value>)', soft: 'rgb(var(--c-indigo-soft) / <alpha-value>)', wash: 'rgb(var(--c-indigo-wash) / <alpha-value>)' },
+          coral:   { DEFAULT: 'rgb(var(--c-coral) / <alpha-value>)', wash: 'rgb(var(--c-coral-wash) / <alpha-value>)' },
+          sun:     { DEFAULT: 'rgb(var(--c-sun) / <alpha-value>)', wash: 'rgb(var(--c-sun-wash) / <alpha-value>)' },
+          mint:    { DEFAULT: 'rgb(var(--c-mint) / <alpha-value>)', wash: 'rgb(var(--c-mint-wash) / <alpha-value>)' },
+          sky:     { DEFAULT: 'rgb(var(--c-sky) / <alpha-value>)', wash: 'rgb(var(--c-sky-wash) / <alpha-value>)' },
+        },
+        borderRadius: { clay: '20px', claysm: '14px' },
+        boxShadow: {
+          clay:    '0 14px 36px -14px rgba(24,22,38,0.22)',
+          claysm:  '0 6px 18px -8px rgba(24,22,38,0.16)',
+          claypress:'inset 0 2px 6px rgba(24,22,38,0.12)',
+          float:   '0 24px 52px -16px rgba(79,70,229,0.42)',
+        },
+      }
+    }
+  }
+</script>
+<script>
+  // Set theme before paint (no flash)
+  (function () {
+    try {
+      var t = localStorage.getItem('theme');
+      if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      }
+    } catch (e) {}
+  })();
+</script>
+
+<style>
+  :root {
+    --c-surface: 255 255 255; --c-cream: 243 242 247; --c-ink: 24 22 38; --c-inksoft: 84 82 107;
+    --c-indigo: 79 70 229; --c-indigo-soft: 124 115 242; --c-indigo-wash: 236 235 255;
+    --c-coral: 251 90 126; --c-coral-wash: 255 227 234;
+    --c-sun: 245 165 36; --c-sun-wash: 252 239 210;
+    --c-mint: 16 185 129; --c-mint-wash: 213 243 232;
+    --c-sky: 45 166 240; --c-sky-wash: 219 239 253;
+    --ring: #4F46E5;
+  }
+  .dark {
+    --c-surface: 30 28 46; --c-cream: 42 39 64; --c-ink: 237 236 244; --c-inksoft: 166 164 188;
+    --c-indigo: 99 89 236; --c-indigo-soft: 154 146 250; --c-indigo-wash: 49 46 92;
+    --c-coral: 251 122 150; --c-coral-wash: 74 38 52;
+    --c-sun: 245 178 70; --c-sun-wash: 74 60 30;
+    --c-mint: 30 211 154; --c-mint-wash: 22 64 54;
+    --c-sky: 77 184 245; --c-sky-wash: 22 60 86;
+    --ring: #7C73F2;
+  }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); }
+
+  /* Soft animated gradient mesh background */
+  /* Sfondo pulito e chiaro con bagliori leggerissimi */
+  .mesh-bg {
+    background-color: #F8F8FC;
+    background-image:
+      radial-gradient(at 15% 6%, rgba(79,70,229,0.06) 0px, transparent 40%),
+      radial-gradient(at 88% 92%, rgba(16,185,129,0.05) 0px, transparent 42%);
+  }
+  .dark .mesh-bg {
+    background-color: #131120;
+    background-image:
+      radial-gradient(at 15% 6%, rgba(124,115,242,0.14) 0px, transparent 42%),
+      radial-gradient(at 85% 92%, rgba(16,185,129,0.10) 0px, transparent 42%);
+  }
+  .dark .grain::after { opacity: .07; }
+  .dark .shadow-clay   { box-shadow: 0 18px 40px -16px rgba(0,0,0,0.65); }
+  .dark .shadow-claysm { box-shadow: 0 8px 22px -10px rgba(0,0,0,0.6); }
+  .dark .shadow-float  { box-shadow: 0 24px 52px -16px rgba(0,0,0,0.7); }
+
+  /* Evidenziatore per gli occhielli di sezione */
+  .mark { display:inline-block; padding:.12em .45em; border-radius:4px; color: rgb(var(--c-ink)); }
+  .mark-sun    { background: rgb(var(--c-sun) / .55); }
+  .mark-coral  { background: rgb(var(--c-coral) / .38); }
+  .mark-mint   { background: rgb(var(--c-mint) / .32); }
+  .mark-indigo { background: rgb(var(--c-indigo) / .24); }
+
+  /* Cornici immagini con fallback a gradiente (se la foto non carica) */
+  .ph { background: linear-gradient(135deg, rgb(var(--c-indigo)) 0%, rgb(var(--c-sky)) 55%, rgb(var(--c-mint)) 100%); }
+  .ph > img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .ph > img { transition: transform .5s cubic-bezier(.16,1,.3,1); }
+  .ph:hover > img { transform: scale(1.05); }
+
+  /* Skip link (accessibilità) */
+  .skip-link { position: absolute; left: 12px; top: -60px; z-index: 100; background: rgb(var(--c-indigo)); color: #fff; padding: .7rem 1.1rem; border-radius: 12px; font-weight: 700; transition: top .2s ease; }
+  .skip-link:focus { top: 12px; }
+
+  /* Navbar: stato allo scroll */
+  #navbar { transition: box-shadow .25s ease, background-color .25s ease; }
+  #navbar.scrolled { box-shadow: 0 12px 30px -12px rgba(24,22,38,0.28); }
+
+  /* Link di navigazione attivo (scrollspy) */
+  #navlinks a.nav-active { color: rgb(var(--c-indigo)); background: rgb(var(--c-indigo-wash)); }
+
+  /* Back to top */
+  #toTop { opacity: 0; visibility: hidden; transform: translateY(12px); transition: opacity .3s ease, transform .3s ease, visibility .3s; }
+  #toTop.show { opacity: 1; visibility: visible; transform: none; }
+
+  /* Barra CTA mobile */
+  #mobileCta { transition: transform .35s cubic-bezier(.16,1,.3,1); }
+  #mobileCta.hide { transform: translateY(130%); }
+
+  /* Grain overlay for depth */
+  .grain::after {
+    content:""; position:fixed; inset:0; pointer-events:none; z-index:1; opacity:.035;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* Floating clay blobs */
+  .blob { position:absolute; border-radius:50%; filter:blur(46px); opacity:.5; }
+  @keyframes floaty { 0%,100%{transform:translateY(0) rotate(0)} 50%{transform:translateY(-22px) rotate(6deg)} }
+  @keyframes floaty2 { 0%,100%{transform:translateY(0) rotate(0)} 50%{transform:translateY(18px) rotate(-8deg)} }
+  .anim-floaty  { animation: floaty 7s ease-in-out infinite; }
+  .anim-floaty2 { animation: floaty2 9s ease-in-out infinite; }
+  .anim-floaty3 { animation: floaty 11s ease-in-out infinite; }
+
+  /* Clay button press */
+  .btn-clay { transition: box-shadow .2s ease, transform .2s ease; }
+  .btn-clay:active { box-shadow: var(--tw-shadow,inset 4px 4px 10px rgba(81,69,229,0.18)); transform: translateY(1px) scale(.985); }
+
+  /* Scroll reveal */
+  .reveal { opacity:0; transform: translateY(28px); transition: opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1); }
+  .reveal.in { opacity:1; transform:none; }
+  .reveal[data-d="1"]{transition-delay:.08s}.reveal[data-d="2"]{transition-delay:.16s}
+  .reveal[data-d="3"]{transition-delay:.24s}.reveal[data-d="4"]{transition-delay:.32s}
+  .reveal[data-d="5"]{transition-delay:.40s}.reveal[data-d="6"]{transition-delay:.48s}
+
+  /* Hero load stagger */
+  @keyframes rise { from{opacity:0; transform:translateY(26px)} to{opacity:1; transform:none} }
+  .rise { opacity:0; animation: rise .8s cubic-bezier(.16,1,.3,1) forwards; }
+  .d1{animation-delay:.05s}.d2{animation-delay:.18s}.d3{animation-delay:.31s}.d4{animation-delay:.44s}.d5{animation-delay:.57s}
+
+  .marquee { display:flex; gap:3rem; width:max-content; animation: scrollx 28s linear infinite; }
+  @keyframes scrollx { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+  details > summary { list-style:none; cursor:pointer; }
+  details > summary::-webkit-details-marker { display:none; }
+  details[open] .faq-chevron { transform: rotate(180deg); }
+  .faq-chevron { transition: transform .25s ease; }
+
+  *:focus-visible { outline: 3px solid var(--ring); outline-offset: 3px; border-radius: 8px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .anim-floaty,.anim-floaty2,.anim-floaty3,.rise,.marquee { animation: none !important; }
+    .reveal { opacity:1 !important; transform:none !important; transition:none !important; }
+    .rise { opacity:1 !important; }
+  }
+</style>
+</head>
+
+<body class="mesh-bg grain font-body text-ink antialiased overflow-x-hidden">
+
+<a href="#top" class="skip-link">Salta al contenuto</a>
+
+<!-- ============ NAV ============ -->
+<header class="fixed inset-x-0 top-0 z-50 px-4 pt-4">
+  <nav id="navbar" class="mx-auto max-w-6xl bg-surface/85 backdrop-blur-md rounded-clay shadow-claysm px-5 py-3 flex items-center justify-between">
+    <a href="#top" class="flex items-center gap-2.5 group" aria-label="Polaris Doposcuola, home">
+      <span class="grid h-10 w-10 place-items-center rounded-claysm bg-indigo shadow-claysm text-white transition group-hover:rotate-6">
+        <!-- rainbow / sparkle icon -->
+        <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c.55 5.2 2.3 6.95 7.5 7.5-5.2.55-6.95 2.3-7.5 7.5-.55-5.2-2.3-6.95-7.5-7.5 5.2-.55 6.95-2.3 7.5-7.5z"/><path d="M19 14.5c.2 1.9.85 2.55 2.75 2.75-1.9.2-2.55.85-2.75 2.75-.2-1.9-.85-2.55-2.75-2.75 1.9-.2 2.55-.85 2.75-2.75z"/></svg>
+      </span>
+      <span class="font-heading text-xl font-600 tracking-tight">Polaris</span>
+    </a>
+
+    <div id="navlinks" class="hidden md:flex items-center gap-1 font-600 text-inksoft">
+      <a href="#programmi" class="px-3 py-2 rounded-claysm hover:text-indigo hover:bg-indigo-wash transition">Programmi</a>
+      <a href="#metodo"    class="px-3 py-2 rounded-claysm hover:text-indigo hover:bg-indigo-wash transition">Metodo</a>
+      <a href="#team"      class="px-3 py-2 rounded-claysm hover:text-indigo hover:bg-indigo-wash transition">Team</a>
+      <a href="#risultati" class="px-3 py-2 rounded-claysm hover:text-indigo hover:bg-indigo-wash transition">Risultati</a>
+      <a href="#prezzi"    class="px-3 py-2 rounded-claysm hover:text-indigo hover:bg-indigo-wash transition">Rette</a>
+      <a href="#faq"       class="px-3 py-2 rounded-claysm hover:text-indigo hover:bg-indigo-wash transition">FAQ</a>
+    </div>
+
+    <div class="flex items-center gap-2">
+      <button id="themeToggle" class="grid h-10 w-10 place-items-center rounded-claysm bg-indigo-wash text-indigo shadow-claysm cursor-pointer transition hover:brightness-105" aria-label="Attiva o disattiva il tema scuro">
+        <svg class="h-5 w-5 dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="h-5 w-5 hidden dark:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+      <a href="#contatti" class="btn-clay hidden sm:inline-flex items-center gap-2 rounded-claysm bg-coral text-white font-700 px-4 py-2.5 shadow-claysm hover:shadow-float cursor-pointer">
+        Iscriviti
+      </a>
+      <button id="navToggle" class="md:hidden grid h-10 w-10 place-items-center rounded-claysm bg-indigo-wash text-indigo shadow-claysm cursor-pointer" aria-label="Apri menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div id="mobileMenu" class="md:hidden hidden mx-auto mt-2 max-w-6xl bg-surface rounded-clay shadow-clay p-3 font-600 text-ink">
+    <a href="#programmi" class="block px-4 py-3 rounded-claysm hover:bg-indigo-wash">Programmi</a>
+    <a href="#metodo"    class="block px-4 py-3 rounded-claysm hover:bg-indigo-wash">Metodo</a>
+    <a href="#team"      class="block px-4 py-3 rounded-claysm hover:bg-indigo-wash">Team</a>
+    <a href="#risultati" class="block px-4 py-3 rounded-claysm hover:bg-indigo-wash">Risultati</a>
+    <a href="#prezzi"    class="block px-4 py-3 rounded-claysm hover:bg-indigo-wash">Rette</a>
+    <a href="#faq"       class="block px-4 py-3 rounded-claysm hover:bg-indigo-wash">FAQ</a>
+    <a href="#contatti"  class="mt-2 block text-center px-4 py-3 rounded-claysm bg-coral text-white font-700">Iscriviti ora</a>
+  </div>
+</header>
+
+<main id="top" class="relative z-10">
+
+  <!-- ============ HERO ============ -->
+  <section class="relative pt-36 pb-20 md:pt-44 md:pb-28 px-4">
+    <!-- floating blobs -->
+    <div class="blob anim-floaty  bg-sun/60      h-24 w-24 left-[6%]  top-[22%] hidden sm:block shadow-claysm"></div>
+    <div class="blob anim-floaty2 bg-mint/50     h-16 w-16 left-[14%] top-[64%] hidden sm:block shadow-claysm"></div>
+    <div class="blob anim-floaty3 bg-coral/50    h-20 w-20 right-[8%] top-[26%] hidden sm:block shadow-claysm"></div>
+    <div class="blob anim-floaty  bg-sky/50      h-14 w-14 right-[16%] top-[68%] hidden sm:block shadow-claysm"></div>
+
+    <div class="mx-auto max-w-6xl grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+      <!-- Testo -->
+      <div class="text-center lg:text-left">
+        <span class="rise d1 inline-flex items-center gap-2 rounded-full bg-surface shadow-claysm px-4 py-2 text-sm font-700 text-indigo">
+          <span class="h-2.5 w-2.5 rounded-full bg-mint animate-pulse"></span>
+          Nel cuore di Bolzano · Aiuto compiti bilingue IT / DE
+        </span>
+
+        <h1 class="rise d2 mt-6 font-heading font-700 leading-[1.05] tracking-tight text-5xl sm:text-6xl md:text-7xl">
+          Dove lo studio<br class="hidden sm:block" />
+          diventa <span class="relative whitespace-nowrap">
+            <span aria-hidden="true" class="absolute left-[-4px] right-[-4px] bottom-[0.08em] h-[0.55em] z-0 -rotate-1 rounded-[3px] bg-sun/90"></span>
+            <span class="relative z-10 text-[#181626]">semplice</span>
+          </span>
+        </h1>
+
+        <p class="rise d3 mt-7 max-w-xl mx-auto lg:mx-0 text-lg md:text-xl text-inksoft font-500">
+          Un doposcuola sereno e stimolante a Bolzano: aiuto compiti in italiano e tedesco,
+          supporto per i Bisogni Educativi Speciali e tutte le materie principali. I tuoi figli crescono autonomi e felici.
+        </p>
+
+        <div class="rise d4 mt-9 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3">
+          <a href="#contatti" class="btn-clay group inline-flex items-center gap-2 rounded-clay bg-indigo text-white font-700 text-lg px-7 py-4 shadow-float hover:shadow-claysm cursor-pointer">
+            Prenota una prova gratuita
+            <svg viewBox="0 0 24 24" class="h-5 w-5 transition group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="#metodo" class="btn-clay inline-flex items-center gap-2 rounded-clay bg-surface text-ink font-700 text-lg px-7 py-4 shadow-claysm hover:text-indigo cursor-pointer">
+            Scopri il metodo
+          </a>
+        </div>
+      </div>
+
+      <!-- Immagine -->
+      <div class="rise d3 relative max-w-md mx-auto lg:max-w-none w-full">
+        <div class="ph rounded-clay shadow-float overflow-hidden aspect-[4/5] -rotate-1">
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=70"
+               alt="Ragazzi che studiano insieme al doposcuola Polaris" loading="lazy"
+               onerror="this.style.display='none'" />
+        </div>
+        <div class="absolute -bottom-5 left-2 sm:left-5 rounded-clay bg-surface shadow-clay px-4 py-3 flex items-center gap-3">
+          <span class="grid h-10 w-10 place-items-center rounded-claysm bg-mint-wash text-mint shrink-0">
+            <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          </span>
+          <div class="text-left">
+            <p class="font-heading font-700 leading-none">Gruppi da max 8</p>
+            <p class="text-xs text-inksoft font-600">attenzione su misura</p>
+          </div>
+        </div>
+        <div class="absolute -top-4 right-2 sm:-right-3 rounded-clay bg-sun text-ink shadow-clay px-3 py-2 text-sm font-700 rotate-3">★ 4,9/5 genitori</div>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <dl class="rise d5 mx-auto mt-16 grid max-w-3xl grid-cols-3 gap-3 sm:gap-5">
+      <div class="rounded-clay bg-surface shadow-clay px-3 py-5 text-center">
+        <dd class="font-heading text-3xl sm:text-4xl font-700 text-indigo"><span class="count" data-to="12">0</span>+</dd>
+        <dt class="mt-1 text-sm font-600 text-inksoft">anni a Bolzano</dt>
+      </div>
+      <div class="rounded-clay bg-surface shadow-clay px-3 py-5 text-center">
+        <dd class="font-heading text-3xl sm:text-4xl font-700 text-coral"><span class="count" data-to="480">0</span>+</dd>
+        <dt class="mt-1 text-sm font-600 text-inksoft">ragazzi felici</dt>
+      </div>
+      <div class="rounded-clay bg-surface shadow-clay px-3 py-5 text-center">
+        <dd class="font-heading text-3xl sm:text-4xl font-700 text-mint"><span class="count" data-to="98">0</span>%</dd>
+        <dt class="mt-1 text-sm font-600 text-inksoft">genitori soddisfatti</dt>
+      </div>
+    </dl>
+  </section>
+
+  <!-- ============ TRUST MARQUEE ============ -->
+  <section aria-label="I nostri valori" class="py-6 overflow-hidden">
+    <div class="marquee text-inksoft/70 font-700 font-heading text-lg">
+      <span class="flex gap-12 pr-12">
+        <span>★ Docenti di ruolo e abilitati</span><span>★ Psicologi</span><span>★ Educatori qualificati</span><span>★ Bilingue IT / DE</span>
+        <span>★ Supporto BES &amp; DSA</span><span>★ Aperto fino alle 18:30</span><span>★ Spazi sicuri e luminosi</span>
+      </span>
+      <span class="flex gap-12 pr-12" aria-hidden="true">
+        <span>★ Docenti di ruolo e abilitati</span><span>★ Psicologi</span><span>★ Educatori qualificati</span><span>★ Bilingue IT / DE</span>
+        <span>★ Supporto BES &amp; DSA</span><span>★ Aperto fino alle 18:30</span><span>★ Spazi sicuri e luminosi</span>
+      </span>
+    </div>
+  </section>
+
+  <!-- ============ PROGRAMMI ============ -->
+  <section id="programmi" class="px-4 py-20 md:py-28">
+    <div class="mx-auto max-w-6xl">
+      <div class="max-w-2xl reveal">
+        <span class="font-700 uppercase tracking-wider text-sm mark mark-coral">I nostri programmi</span>
+        <h2 class="mt-3 font-heading font-700 text-4xl md:text-5xl leading-tight">Tutto ciò che serve per crescere bene</h2>
+        <p class="mt-4 text-lg text-inksoft font-500">Ogni pomeriggio è un equilibrio fra impegno e divertimento, pensato per ragazzi delle scuole medie e superiori.</p>
+      </div>
+
+      <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <!-- card -->
+        <article class="reveal" data-d="1">
+          <div class="h-full rounded-clay bg-surface shadow-clay overflow-hidden transition duration-300 hover:-translate-y-2 hover:shadow-float">
+            <div class="ph h-40 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=600&q=70" alt="Ragazzo che fa i compiti" loading="lazy" onerror="this.style.display='none'" />
+            </div>
+            <div class="px-7 pb-7">
+              <span class="-mt-7 relative inline-grid h-14 w-14 place-items-center rounded-claysm bg-indigo-wash text-indigo shadow-claysm ring-4 ring-surface">
+                <svg viewBox="0 0 24 24" class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+              </span>
+              <h3 class="mt-4 font-heading text-xl font-600">Aiuto compiti bilingue</h3>
+              <p class="mt-2 text-inksoft font-500">Supporto in italiano e tedesco con educatori dedicati. Metodo di studio, non solo risultati.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="reveal" data-d="2">
+          <div class="h-full rounded-clay bg-surface shadow-clay overflow-hidden transition duration-300 hover:-translate-y-2 hover:shadow-float">
+            <div class="ph h-40 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=600&q=70" alt="Laboratorio creativo" loading="lazy" onerror="this.style.display='none'" />
+            </div>
+            <div class="px-7 pb-7">
+              <span class="-mt-7 relative inline-grid h-14 w-14 place-items-center rounded-claysm bg-coral-wash text-coral shadow-claysm ring-4 ring-surface">
+                <svg viewBox="0 0 24 24" class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+              </span>
+              <h3 class="mt-4 font-heading text-xl font-600">Laboratori creativi</h3>
+              <p class="mt-2 text-inksoft font-500">Arte, musica, coding e manualità per accendere la curiosità e la passione di ogni ragazzo.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="reveal" data-d="3">
+          <div class="h-full rounded-clay bg-surface shadow-clay overflow-hidden transition duration-300 hover:-translate-y-2 hover:shadow-float">
+            <div class="ph h-40 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=600&q=70" alt="Attività sportiva all'aperto" loading="lazy" onerror="this.style.display='none'" />
+            </div>
+            <div class="px-7 pb-7">
+              <span class="-mt-7 relative inline-grid h-14 w-14 place-items-center rounded-claysm bg-mint-wash text-mint shadow-claysm ring-4 ring-surface">
+                <svg viewBox="0 0 24 24" class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg>
+              </span>
+              <h3 class="mt-4 font-heading text-xl font-600">Sport & movimento</h3>
+              <p class="mt-2 text-inksoft font-500">Giochi di gruppo e attività all'aperto sulle piste ciclabili e nei parchi di Bolzano.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="reveal" data-d="4">
+          <div class="h-full rounded-clay bg-surface shadow-clay overflow-hidden transition duration-300 hover:-translate-y-2 hover:shadow-float">
+            <div class="ph h-40 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1606761568499-6d2451b23c66?auto=format&fit=crop&w=600&q=70" alt="Supporto individuale allo studio" loading="lazy" onerror="this.style.display='none'" />
+            </div>
+            <div class="px-7 pb-7">
+              <span class="-mt-7 relative inline-grid h-14 w-14 place-items-center rounded-claysm bg-sun-wash text-sun shadow-claysm ring-4 ring-surface">
+                <svg viewBox="0 0 24 24" class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </span>
+              <h3 class="mt-4 font-heading text-xl font-600">Supporto BES &amp; DSA</h3>
+              <p class="mt-2 text-inksoft font-500">Piani didattici personalizzati per Bisogni Educativi Speciali e DSA, con strumenti compensativi, mappe e tanta pazienza.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="reveal" data-d="5">
+          <div class="h-full rounded-clay bg-surface shadow-clay overflow-hidden transition duration-300 hover:-translate-y-2 hover:shadow-float">
+            <div class="ph h-40 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1453928582365-b6ad33cbcf64?auto=format&fit=crop&w=600&q=70" alt="Libri delle materie scolastiche" loading="lazy" onerror="this.style.display='none'" />
+            </div>
+            <div class="px-7 pb-7">
+              <span class="-mt-7 relative inline-grid h-14 w-14 place-items-center rounded-claysm bg-sky-wash text-sky shadow-claysm ring-4 ring-surface">
+                <svg viewBox="0 0 24 24" class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              </span>
+              <h3 class="mt-4 font-heading text-xl font-600">Tutte le materie</h3>
+              <p class="mt-2 text-inksoft font-500">Matematica, scienze, informatica, inglese, italiano e storia: copriamo le materie principali con educatori specializzati.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="reveal" data-d="6">
+          <div class="h-full rounded-clay bg-indigo shadow-float p-7 text-white transition duration-300 hover:-translate-y-2">
+            <span class="grid h-14 w-14 place-items-center rounded-claysm bg-white/15 text-white shadow-claysm">
+              <svg viewBox="0 0 24 24" class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </span>
+            <h3 class="mt-5 font-heading text-xl font-600">Gruppi piccoli</h3>
+            <p class="mt-2 text-white/85 font-500">Massimo 8 ragazzi per educatore: attenzione vera e su misura per ciascuno.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MATERIE ============ -->
+  <section aria-labelledby="materie-title" class="px-4 pb-2">
+    <div class="mx-auto max-w-6xl rounded-clay bg-surface shadow-claysm p-7 sm:p-9 reveal">
+      <div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+        <div class="max-w-md">
+          <h2 id="materie-title" class="font-heading font-700 text-2xl md:text-3xl">Le materie che seguiamo</h2>
+          <p class="mt-2 text-inksoft font-500">Per le scuole medie e superiori, copriamo le materie chiave con educatori specializzati.</p>
+        </div>
+        <ul class="flex flex-wrap gap-3">
+          <li class="inline-flex items-center gap-2 rounded-claysm bg-indigo-wash text-ink font-700 px-4 py-2 shadow-claysm"><span class="h-2.5 w-2.5 rounded-full bg-indigo"></span>Matematica</li>
+          <li class="inline-flex items-center gap-2 rounded-claysm bg-mint-wash text-ink font-700 px-4 py-2 shadow-claysm"><span class="h-2.5 w-2.5 rounded-full bg-mint"></span>Scienze</li>
+          <li class="inline-flex items-center gap-2 rounded-claysm bg-sky-wash text-ink font-700 px-4 py-2 shadow-claysm"><span class="h-2.5 w-2.5 rounded-full bg-sky"></span>Informatica</li>
+          <li class="inline-flex items-center gap-2 rounded-claysm bg-coral-wash text-ink font-700 px-4 py-2 shadow-claysm"><span class="h-2.5 w-2.5 rounded-full bg-coral"></span>Inglese</li>
+          <li class="inline-flex items-center gap-2 rounded-claysm bg-sun-wash text-ink font-700 px-4 py-2 shadow-claysm"><span class="h-2.5 w-2.5 rounded-full bg-sun"></span>Italiano</li>
+          <li class="inline-flex items-center gap-2 rounded-claysm bg-indigo-wash text-ink font-700 px-4 py-2 shadow-claysm"><span class="h-2.5 w-2.5 rounded-full bg-indigo"></span>Storia</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ METODO / COME FUNZIONA ============ -->
+  <section id="metodo" class="px-4 py-20 md:py-28">
+    <div class="mx-auto max-w-6xl rounded-clay bg-surface shadow-clay p-7 sm:p-12">
+      <div class="max-w-2xl reveal">
+        <span class="font-700 uppercase tracking-wider text-sm mark mark-indigo">Come funziona</span>
+        <h2 class="mt-3 font-heading font-700 text-4xl md:text-5xl leading-tight">Un pomeriggio con ritmo giusto</h2>
+        <p class="mt-4 text-lg text-inksoft font-500">Routine chiara e rassicurante: i ragazzi sanno cosa li aspetta e i genitori sono tranquilli.</p>
+      </div>
+
+      <ol class="mt-12 grid gap-6 md:grid-cols-4">
+        <li class="reveal" data-d="1">
+          <div class="flex items-center gap-3">
+            <span class="grid h-11 w-11 place-items-center rounded-full bg-indigo text-white font-heading font-700 shadow-claysm">1</span>
+            <span class="font-heading text-lg font-600">Accoglienza</span>
+          </div>
+          <p class="mt-3 text-inksoft font-500">Arrivo da scuola e un momento di gioco libero per scaricare le energie prima di iniziare.</p>
+        </li>
+        <li class="reveal" data-d="2">
+          <div class="flex items-center gap-3">
+            <span class="grid h-11 w-11 place-items-center rounded-full bg-coral text-white font-heading font-700 shadow-claysm">2</span>
+            <span class="font-heading text-lg font-600">Compiti</span>
+          </div>
+          <p class="mt-3 text-inksoft font-500">Studio guidato in piccoli gruppi, con metodo e supporto bilingue dove serve.</p>
+        </li>
+        <li class="reveal" data-d="3">
+          <div class="flex items-center gap-3">
+            <span class="grid h-11 w-11 place-items-center rounded-full bg-mint text-white font-heading font-700 shadow-claysm">3</span>
+            <span class="font-heading text-lg font-600">Laboratori</span>
+          </div>
+          <p class="mt-3 text-inksoft font-500">Attività creative, sportive o scientifiche che cambiano ogni giorno della settimana.</p>
+        </li>
+        <li class="reveal" data-d="4">
+          <div class="flex items-center gap-3">
+            <span class="grid h-11 w-11 place-items-center rounded-full bg-sun text-ink font-heading font-700 shadow-claysm">4</span>
+            <span class="font-heading text-lg font-600">Saluti</span>
+          </div>
+          <p class="mt-3 text-inksoft font-500">Riordino insieme e ritiro flessibile fino alle 18:30, con un breve punto sulla giornata.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ TEAM ============ -->
+  <section id="team" class="px-4 py-20 md:py-28">
+    <div class="mx-auto max-w-6xl">
+      <div class="max-w-2xl reveal">
+        <span class="font-700 uppercase tracking-wider text-sm mark mark-mint">Il nostro team</span>
+        <h2 class="mt-3 font-heading font-700 text-4xl md:text-5xl leading-tight">Chi segue i tuoi ragazzi</h2>
+        <p class="mt-4 text-lg text-inksoft font-500">Professionisti veri, non improvvisati: docenti di ruolo e abilitati, psicologi ed educatori qualificati, in costante dialogo con scuola e famiglia.</p>
+      </div>
+
+      <div class="mt-12 grid gap-5 md:grid-cols-3">
+        <article class="reveal" data-d="1">
+          <div class="h-full rounded-clay bg-surface shadow-clay p-7 transition duration-300 hover:-translate-y-2 hover:shadow-float">
+            <span class="grid h-14 w-14 place-items-center rounded-claysm bg-indigo-wash text-indigo shadow-claysm">
+              <svg viewBox="0 0 24 24" class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 3 6 3s6-2 6-3v-5"/></svg>
+            </span>
+            <h3 class="mt-5 font-heading text-xl font-600">Docenti di ruolo e abilitati</h3>
+            <p class="mt-2 text-inksoft font-500">Insegnanti con abilitazione e cattedra, esperti nei programmi di medie e superiori e nella preparazione di verifiche ed esami.</p>
+          </div>
+        </article>
+
+        <article class="reveal" data-d="2">
+          <div class="h-full rounded-clay bg-surface shadow-clay p-7 transition duration-300 hover:-translate-y-2 hover:shadow-float">
+            <span class="grid h-14 w-14 place-items-center rounded-claysm bg-coral-wash text-coral shadow-claysm">
+              <svg viewBox="0 0 24 24" class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24A2.5 2.5 0 0 1 7.05 3 2.5 2.5 0 0 1 9.5 2z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24A2.5 2.5 0 0 0 16.95 3 2.5 2.5 0 0 0 14.5 2z"/></svg>
+            </span>
+            <h3 class="mt-5 font-heading text-xl font-600">Psicologi</h3>
+            <p class="mt-2 text-inksoft font-500">Sostegno al metodo di studio, alla motivazione e alla gestione dell'ansia da prestazione, con attenzione al benessere di ogni ragazzo.</p>
+          </div>
+        </article>
+
+        <article class="reveal" data-d="3">
+          <div class="h-full rounded-clay bg-surface shadow-clay p-7 transition duration-300 hover:-translate-y-2 hover:shadow-float">
+            <span class="grid h-14 w-14 place-items-center rounded-claysm bg-mint-wash text-mint shadow-claysm">
+              <svg viewBox="0 0 24 24" class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </span>
+            <h3 class="mt-5 font-heading text-xl font-600">Educatori qualificati</h3>
+            <p class="mt-2 text-inksoft font-500">Affiancano i ragazzi ogni giorno con pazienza e ascolto, creando un clima sereno e di fiducia in cui crescere.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SPAZI / GALLERY ============ -->
+  <section id="spazi" class="px-4 py-20 md:py-28">
+    <div class="mx-auto max-w-6xl">
+      <div class="max-w-2xl reveal">
+        <span class="font-700 uppercase tracking-wider text-sm mark mark-mint">I nostri spazi</span>
+        <h2 class="mt-3 font-heading font-700 text-4xl md:text-5xl leading-tight">Un ambiente fatto per studiare bene</h2>
+        <p class="mt-4 text-lg text-inksoft font-500">Aule luminose, angoli silenziosi e spazi per le pause: tutto pensato per ragazzi di medie e superiori.</p>
+      </div>
+
+      <div class="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-[170px]">
+        <figure class="ph reveal rounded-clay overflow-hidden shadow-clay col-span-2 row-span-2">
+          <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=900&q=70" alt="Aula luminosa del doposcuola" loading="lazy" onerror="this.style.display='none'" />
+        </figure>
+        <figure class="ph reveal rounded-clay overflow-hidden shadow-clay" data-d="1">
+          <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=600&q=70" alt="Libri e materiale di studio" loading="lazy" onerror="this.style.display='none'" />
+        </figure>
+        <figure class="ph reveal rounded-clay overflow-hidden shadow-clay" data-d="2">
+          <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=600&q=70" alt="Angolo creativo con colori" loading="lazy" onerror="this.style.display='none'" />
+        </figure>
+        <figure class="ph reveal rounded-clay overflow-hidden shadow-clay" data-d="3">
+          <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=600&q=70" alt="Quaderno con appunti" loading="lazy" onerror="this.style.display='none'" />
+        </figure>
+        <figure class="ph reveal rounded-clay overflow-hidden shadow-clay" data-d="4">
+          <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=600&q=70" alt="Studio e organizzazione" loading="lazy" onerror="this.style.display='none'" />
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RISULTATI / PRIMA-DOPO ============ -->
+  <section id="risultati" class="px-4 py-20 md:py-28">
+    <div class="mx-auto max-w-6xl">
+      <div class="max-w-2xl reveal">
+        <span class="font-700 uppercase tracking-wider text-sm mark mark-coral">I risultati</span>
+        <h2 class="mt-3 font-heading font-700 text-4xl md:text-5xl leading-tight">Dal caos dei compiti alla serenità</h2>
+        <p class="mt-4 text-lg text-inksoft font-500">Quello che le famiglie ci raccontano dopo poche settimane con noi.</p>
+      </div>
+
+      <div class="mt-12 grid gap-6 md:grid-cols-2">
+        <!-- PRIMA -->
+        <div class="reveal rounded-clay bg-coral-wash p-7 sm:p-9 shadow-claysm">
+          <span class="inline-flex items-center gap-2 rounded-full bg-white/70 px-3 py-1 text-sm font-700 text-coral">Prima</span>
+          <ul class="mt-5 space-y-4 font-500">
+            <li class="flex gap-3"><span class="text-coral mt-0.5">✕</span> Pomeriggi di tensione tra compiti e capricci</li>
+            <li class="flex gap-3"><span class="text-coral mt-0.5">✕</span> Genitori che rincorrono i compiti dopo il lavoro</li>
+            <li class="flex gap-3"><span class="text-coral mt-0.5">✕</span> Difficoltà con il tedesco e voti altalenanti</li>
+            <li class="flex gap-3"><span class="text-coral mt-0.5">✕</span> Poco tempo per gioco, sport e amicizie</li>
+          </ul>
+        </div>
+        <!-- DOPO -->
+        <div class="reveal rounded-clay bg-mint-wash p-7 sm:p-9 shadow-clay relative overflow-hidden">
+          <div class="blob anim-floaty bg-mint/30 h-28 w-28 -right-6 -top-6"></div>
+          <span class="inline-flex items-center gap-2 rounded-full bg-white/80 px-3 py-1 text-sm font-700 text-mint">Dopo Polaris</span>
+          <ul class="mt-5 space-y-4 font-600 relative">
+            <li class="flex gap-3"><span class="text-mint mt-0.5">✓</span> Compiti finiti e zaino pronto entro le 18:00</li>
+            <li class="flex gap-3"><span class="text-mint mt-0.5">✓</span> Ragazzi più autonomi e sicuri di sé</li>
+            <li class="flex gap-3"><span class="text-mint mt-0.5">✓</span> Tedesco in netto miglioramento</li>
+            <li class="flex gap-3"><span class="text-mint mt-0.5">✓</span> Serate libere da passare in famiglia</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Testimonials -->
+      <div class="mt-14 grid gap-5 md:grid-cols-3">
+        <figure class="reveal" data-d="1">
+          <blockquote class="h-full rounded-clay bg-surface shadow-clay p-7">
+            <div class="flex gap-1 text-sun" aria-label="5 stelle su 5">★★★★★</div>
+            <p class="mt-4 text-ink font-500 italic">"Mia figlia esce con i compiti fatti e il sorriso. Il supporto in tedesco ha cambiato tutto."</p>
+            <figcaption class="mt-5 flex items-center gap-3">
+              <span class="grid h-11 w-11 place-items-center rounded-full bg-indigo-wash text-indigo font-heading font-700">GA</span>
+              <span><span class="block font-700">Giulia A.</span><span class="block text-sm text-inksoft">mamma di Sofia, 1ª media</span></span>
+            </figcaption>
+          </blockquote>
+        </figure>
+        <figure class="reveal" data-d="2">
+          <blockquote class="h-full rounded-clay bg-surface shadow-clay p-7">
+            <div class="flex gap-1 text-sun" aria-label="5 stelle su 5">★★★★★</div>
+            <p class="mt-4 text-ink font-500 italic">"Educatori preparati e gentili. Marco non vede l'ora di andarci, e per noi è una garanzia."</p>
+            <figcaption class="mt-5 flex items-center gap-3">
+              <span class="grid h-11 w-11 place-items-center rounded-full bg-coral-wash text-coral font-heading font-700">DF</span>
+              <span><span class="block font-700">Daniel F.</span><span class="block text-sm text-inksoft">papà di Marco, 2ª superiore</span></span>
+            </figcaption>
+          </blockquote>
+        </figure>
+        <figure class="reveal" data-d="3">
+          <blockquote class="h-full rounded-clay bg-surface shadow-clay p-7">
+            <div class="flex gap-1 text-sun" aria-label="5 stelle su 5">★★★★★</div>
+            <p class="mt-4 text-ink font-500 italic">"Spazi luminosi e gruppi piccoli. Finalmente pomeriggi sereni per tutta la famiglia."</p>
+            <figcaption class="mt-5 flex items-center gap-3">
+              <span class="grid h-11 w-11 place-items-center rounded-full bg-mint-wash text-mint font-heading font-700">SK</span>
+              <span><span class="block font-700">Sabine K.</span><span class="block text-sm text-inksoft">mamma di Lena, 3ª media</span></span>
+            </figcaption>
+          </blockquote>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PREZZI ============ -->
+  <section id="prezzi" class="px-4 py-20 md:py-28">
+    <div class="mx-auto max-w-6xl">
+      <div class="max-w-2xl reveal">
+        <span class="font-700 uppercase tracking-wider text-sm mark mark-indigo">Le rette</span>
+        <h2 class="mt-3 font-heading font-700 text-4xl md:text-5xl leading-tight">Formule semplici e trasparenti</h2>
+        <p class="mt-4 text-lg text-inksoft font-500">Nessun costo nascosto. Materiali e laboratori sempre inclusi.</p>
+      </div>
+
+      <div class="mt-12 grid gap-6 lg:grid-cols-3 items-stretch">
+        <!-- tier 1 -->
+        <div class="reveal" data-d="1">
+          <div class="h-full rounded-clay bg-surface shadow-clay p-8 flex flex-col">
+            <h3 class="font-heading text-2xl font-600">Light</h3>
+            <p class="mt-1 text-inksoft font-500">2 pomeriggi a settimana</p>
+            <p class="mt-6"><span class="font-heading text-5xl font-700">€149</span><span class="text-inksoft font-600">/mese</span></p>
+            <ul class="mt-6 space-y-3 font-500 text-ink flex-1">
+              <li class="flex gap-2"><span class="text-mint">✓</span> Aiuto compiti guidato</li>
+              <li class="flex gap-2"><span class="text-mint">✓</span> Supporto su tutte le materie</li>
+              <li class="flex gap-2"><span class="text-mint">✓</span> 1 laboratorio a settimana</li>
+              <li class="flex gap-2"><span class="text-mint">✓</span> Ritiro fino alle 18:00</li>
+            </ul>
+            <a href="#contatti" class="btn-clay mt-8 inline-flex justify-center rounded-claysm bg-indigo-wash text-indigo font-700 px-5 py-3 shadow-claysm cursor-pointer">Scegli Light</a>
+          </div>
+        </div>
+
+        <!-- tier 2 highlighted -->
+        <div class="reveal" data-d="2">
+          <div class="relative h-full rounded-clay bg-indigo shadow-float p-8 flex flex-col text-white scale-[1.02]">
+            <span class="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-sun px-4 py-1 text-sm font-700 text-ink shadow-claysm">Più scelto</span>
+            <h3 class="font-heading text-2xl font-600">Full</h3>
+            <p class="mt-1 text-white/80 font-500">Tutti i giorni, lun–ven</p>
+            <p class="mt-6"><span class="font-heading text-5xl font-700">€299</span><span class="text-white/80 font-600">/mese</span></p>
+            <ul class="mt-6 space-y-3 font-500 flex-1">
+              <li class="flex gap-2"><span class="text-sun">✓</span> Aiuto compiti bilingue IT/DE</li>
+              <li class="flex gap-2"><span class="text-sun">✓</span> Materie scientifiche e umanistiche</li>
+              <li class="flex gap-2"><span class="text-sun">✓</span> Laboratori ogni giorno</li>
+              <li class="flex gap-2"><span class="text-sun">✓</span> Sport & uscite all'aperto</li>
+              <li class="flex gap-2"><span class="text-sun">✓</span> Ritiro flessibile fino alle 18:30</li>
+            </ul>
+            <a href="#contatti" class="btn-clay mt-8 inline-flex justify-center rounded-claysm bg-coral text-white font-700 px-5 py-3 shadow-claysm hover:shadow-float cursor-pointer">Scegli Full</a>
+          </div>
+        </div>
+
+        <!-- tier 3 -->
+        <div class="reveal" data-d="3">
+          <div class="h-full rounded-clay bg-surface shadow-clay p-8 flex flex-col">
+            <h3 class="font-heading text-2xl font-600">Plus</h3>
+            <p class="mt-1 text-inksoft font-500">Full + tutoring 1:1</p>
+            <p class="mt-6"><span class="font-heading text-5xl font-700">€389</span><span class="text-inksoft font-600">/mese</span></p>
+            <ul class="mt-6 space-y-3 font-500 text-ink flex-1">
+              <li class="flex gap-2"><span class="text-mint">✓</span> Tutto ciò che c'è in Full</li>
+              <li class="flex gap-2"><span class="text-mint">✓</span> 2 sessioni individuali a settimana</li>
+              <li class="flex gap-2"><span class="text-mint">✓</span> Report mensile ai genitori</li>
+              <li class="flex gap-2"><span class="text-mint">✓</span> Preparazione verifiche ed esami</li>
+            </ul>
+            <a href="#contatti" class="btn-clay mt-8 inline-flex justify-center rounded-claysm bg-indigo-wash text-indigo font-700 px-5 py-3 shadow-claysm cursor-pointer">Scegli Plus</a>
+          </div>
+        </div>
+      </div>
+      <p class="reveal mt-6 text-center text-inksoft font-500">Sconto fratelli del 15% · Possibilità di pacchetti settimanali · Convenzioni con aziende del territorio</p>
+
+      <!-- Pacchetto BES dedicato -->
+      <div class="reveal mt-10 rounded-clay bg-surface shadow-clay p-7 sm:p-10 relative overflow-hidden">
+        <div class="blob anim-floaty bg-sun/25 h-28 w-28 -right-6 -top-6 hidden sm:block"></div>
+        <div class="relative grid gap-8 md:grid-cols-[1.4fr_1fr] md:items-center">
+          <div>
+            <span class="inline-flex items-center gap-2 rounded-full bg-sun-wash px-3 py-1 text-sm font-700 text-ink">Percorso dedicato</span>
+            <h3 class="mt-3 font-heading font-700 text-2xl md:text-3xl">Pacchetto BES &amp; DSA su misura</h3>
+            <p class="mt-3 text-inksoft font-500">Un percorso personalizzato per ragazzi con Bisogni Educativi Speciali e Disturbi Specifici dell'Apprendimento: educatore di riferimento, strumenti compensativi e collaborazione costante con scuola e famiglia.</p>
+            <ul class="mt-5 grid gap-3 sm:grid-cols-2 font-500 text-ink">
+              <li class="flex gap-2"><span class="text-mint">✓</span> Piano didattico individualizzato</li>
+              <li class="flex gap-2"><span class="text-mint">✓</span> Educatore dedicato</li>
+              <li class="flex gap-2"><span class="text-mint">✓</span> Strumenti compensativi e mappe</li>
+              <li class="flex gap-2"><span class="text-mint">✓</span> Report e colloqui periodici</li>
+            </ul>
+          </div>
+          <div class="rounded-clay bg-indigo-wash p-7 text-center shadow-claysm">
+            <p class="text-inksoft font-600">a partire da</p>
+            <p class="mt-1 font-heading text-5xl font-700 text-indigo">€59<span class="text-2xl align-top">/h</span></p>
+            <p class="mt-2 text-sm text-inksoft font-500">oppure pacchetti mensili personalizzati</p>
+            <a href="#contatti" class="btn-clay mt-5 inline-flex w-full justify-center rounded-claysm bg-indigo text-white font-700 px-5 py-3 shadow-float hover:shadow-claysm cursor-pointer">Richiedi un colloquio</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section id="faq" class="px-4 py-20 md:py-28">
+    <div class="mx-auto max-w-3xl">
+      <div class="text-center reveal">
+        <span class="font-700 uppercase tracking-wider text-sm mark mark-coral">Domande frequenti</span>
+        <h2 class="mt-3 font-heading font-700 text-4xl md:text-5xl leading-tight">Le risposte per i genitori</h2>
+      </div>
+
+      <div class="mt-10 space-y-4">
+        <details class="reveal rounded-clay bg-surface shadow-claysm p-6 open:shadow-clay" open>
+          <summary class="flex items-center justify-between gap-4 font-heading text-lg font-600">
+            Dove si trova il doposcuola?
+            <svg class="faq-chevron h-6 w-6 text-indigo shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <p class="mt-3 text-inksoft font-500">Siamo nel centro di Bolzano, a pochi minuti dalle principali scuole medie e superiori, ben collegati con autobus e piste ciclabili.</p>
+        </details>
+
+        <details class="reveal rounded-clay bg-surface shadow-claysm p-6 open:shadow-clay">
+          <summary class="flex items-center justify-between gap-4 font-heading text-lg font-600">
+A chi è rivolto il doposcuola?
+            <svg class="faq-chevron h-6 w-6 text-indigo shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <p class="mt-3 text-inksoft font-500">Seguiamo ragazzi e ragazze delle scuole medie e superiori (circa 11–19 anni), suddivisi in piccoli gruppi per età, classe e livello scolastico.</p>
+        </details>
+
+        <details class="reveal rounded-clay bg-surface shadow-claysm p-6 open:shadow-clay">
+          <summary class="flex items-center justify-between gap-4 font-heading text-lg font-600">
+            Il supporto è davvero in tedesco?
+            <svg class="faq-chevron h-6 w-6 text-indigo shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <p class="mt-3 text-inksoft font-500">Sì. I nostri educatori sono madrelingua o bilingui e seguono i compiti sia in italiano sia in tedesco, una marcia in più in Alto Adige.</p>
+        </details>
+
+        <details class="reveal rounded-clay bg-surface shadow-claysm p-6 open:shadow-clay">
+          <summary class="flex items-center justify-between gap-4 font-heading text-lg font-600">
+            Posso provare prima di iscrivermi?
+            <svg class="faq-chevron h-6 w-6 text-indigo shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <p class="mt-3 text-inksoft font-500">Certo! Offriamo una giornata di prova gratuita e senza impegno, così tuo figlio può conoscere gli spazi e gli educatori.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTATTI / CTA ============ -->
+  <section id="contatti" class="px-4 py-20 md:py-28">
+    <div class="mx-auto max-w-5xl rounded-clay bg-indigo shadow-float p-7 sm:p-12 text-white relative overflow-hidden">
+      <div class="blob anim-floaty  bg-sun/30  h-32 w-32 -left-8 -bottom-8"></div>
+      <div class="blob anim-floaty2 bg-coral/30 h-28 w-28 right-6 -top-6"></div>
+
+      <div class="relative grid gap-10 md:grid-cols-2 md:items-center">
+        <div class="reveal">
+          <h2 class="font-heading font-700 text-4xl md:text-5xl leading-tight">Prenota la giornata di prova gratuita</h2>
+          <p class="mt-4 text-white/85 font-500 text-lg">Scegli giorno e fascia oraria: ricevi la conferma e l'invito direttamente sul tuo calendario. Niente attese.</p>
+          <ul class="mt-7 space-y-3 font-600">
+            <li class="flex items-center gap-3"><span class="grid h-9 w-9 place-items-center rounded-claysm bg-white/15"><svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span> +39 0471 000 000</li>
+            <li class="flex items-center gap-3"><span class="grid h-9 w-9 place-items-center rounded-claysm bg-white/15"><svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="m22 6-10 7L2 6"/></svg></span> ciao@polaris-bz.it</li>
+            <li class="flex items-center gap-3"><span class="grid h-9 w-9 place-items-center rounded-claysm bg-white/15"><svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span> Centro città, Bolzano (BZ)</li>
+          </ul>
+        </div>
+
+        <form id="iscrizioneForm" class="reveal rounded-clay bg-surface p-6 sm:p-7 text-ink shadow-clay" novalidate>
+          <div class="space-y-4">
+            <div class="grid gap-4 sm:grid-cols-2">
+              <div>
+                <label for="nome" class="block text-sm font-700 mb-1.5">Nome e cognome</label>
+                <input id="nome" name="nome" type="text" required placeholder="Mario Rossi"
+                       class="w-full rounded-claysm bg-cream px-4 py-3 font-500 shadow-claypress placeholder:text-inksoft/60 focus:outline-none" />
+              </div>
+              <div>
+                <label for="telefono" class="block text-sm font-700 mb-1.5">Telefono</label>
+                <input id="telefono" name="telefono" type="tel" required placeholder="+39 333 1234567"
+                       class="w-full rounded-claysm bg-cream px-4 py-3 font-500 shadow-claypress placeholder:text-inksoft/60 focus:outline-none" />
+              </div>
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-700 mb-1.5">Email</label>
+              <input id="email" name="email" type="email" required placeholder="mario@email.it"
+                     class="w-full rounded-claysm bg-cream px-4 py-3 font-500 shadow-claypress placeholder:text-inksoft/60 focus:outline-none" />
+            </div>
+            <div>
+              <label for="classe" class="block text-sm font-700 mb-1.5">Classe del ragazzo/a</label>
+              <input id="classe" name="classe" type="text" placeholder="es. 2ª media o 1ª superiore"
+                     class="w-full rounded-claysm bg-cream px-4 py-3 font-500 shadow-claypress placeholder:text-inksoft/60 focus:outline-none" />
+            </div>
+            <div>
+              <label for="data" class="block text-sm font-700 mb-1.5">Giorno preferito <span class="text-inksoft font-500">(lun–ven)</span></label>
+              <input id="data" name="data" type="date" required
+                     class="w-full rounded-claysm bg-cream px-4 py-3 font-500 shadow-claypress focus:outline-none" />
+            </div>
+            <div>
+              <span class="block text-sm font-700 mb-1.5">Fascia oraria</span>
+              <div id="slotGroup" role="radiogroup" aria-label="Fascia oraria" class="grid grid-cols-4 gap-2">
+                <label class="cursor-pointer">
+                  <input type="radio" name="slot" value="14:00" class="peer sr-only" required />
+                  <span class="block text-center rounded-claysm bg-cream px-2 py-2.5 text-sm font-700 shadow-claypress peer-checked:bg-indigo peer-checked:text-white peer-disabled:opacity-40 peer-disabled:line-through peer-disabled:cursor-not-allowed transition">14:00</span>
+                </label>
+                <label class="cursor-pointer">
+                  <input type="radio" name="slot" value="15:00" class="peer sr-only" />
+                  <span class="block text-center rounded-claysm bg-cream px-2 py-2.5 text-sm font-700 shadow-claypress peer-checked:bg-indigo peer-checked:text-white peer-disabled:opacity-40 peer-disabled:line-through peer-disabled:cursor-not-allowed transition">15:00</span>
+                </label>
+                <label class="cursor-pointer">
+                  <input type="radio" name="slot" value="16:00" class="peer sr-only" />
+                  <span class="block text-center rounded-claysm bg-cream px-2 py-2.5 text-sm font-700 shadow-claypress peer-checked:bg-indigo peer-checked:text-white peer-disabled:opacity-40 peer-disabled:line-through peer-disabled:cursor-not-allowed transition">16:00</span>
+                </label>
+                <label class="cursor-pointer">
+                  <input type="radio" name="slot" value="17:00" class="peer sr-only" />
+                  <span class="block text-center rounded-claysm bg-cream px-2 py-2.5 text-sm font-700 shadow-claypress peer-checked:bg-indigo peer-checked:text-white peer-disabled:opacity-40 peer-disabled:line-through peer-disabled:cursor-not-allowed transition">17:00</span>
+                </label>
+              </div>
+            </div>
+            <div>
+              <label for="messaggio" class="block text-sm font-700 mb-1.5">Messaggio <span class="text-inksoft font-500">(facoltativo)</span></label>
+              <textarea id="messaggio" name="messaggio" rows="2" placeholder="Raccontaci di cosa avete bisogno…"
+                        class="w-full rounded-claysm bg-cream px-4 py-3 font-500 shadow-claypress placeholder:text-inksoft/60 focus:outline-none resize-none"></textarea>
+            </div>
+            <label class="flex items-start gap-2.5 text-sm text-inksoft font-500">
+              <input id="privacy" name="privacy" type="checkbox" required class="mt-0.5 h-4 w-4 rounded accent-indigo cursor-pointer" />
+              <span>Acconsento al trattamento dei dati per essere ricontattato/a (<a href="#" class="text-indigo underline">privacy</a>).</span>
+            </label>
+            <button id="submitBtn" type="submit" class="btn-clay w-full inline-flex justify-center items-center gap-2 rounded-claysm bg-indigo text-white font-700 text-lg px-5 py-3.5 shadow-float hover:shadow-claysm cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed">
+              <svg id="spinner" class="hidden h-5 w-5 animate-spin" viewBox="0 0 24 24" fill="none"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-90" fill="currentColor" d="M4 12a8 8 0 0 1 8-8V0C5.4 0 0 5.4 0 12h4z"/></svg>
+              <span id="submitLabel">Prenota la prova gratuita</span>
+            </button>
+            <p id="formMsg" class="hidden text-center font-700" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="relative z-10 px-4 pb-28 sm:pb-10 pt-6">
+  <div class="mx-auto max-w-6xl rounded-clay bg-surface shadow-claysm p-7 sm:p-10">
+    <div class="grid gap-8 md:grid-cols-4">
+      <div class="md:col-span-2">
+        <div class="flex items-center gap-2.5">
+          <span class="grid h-10 w-10 place-items-center rounded-claysm bg-indigo shadow-claysm text-white">
+            <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c.55 5.2 2.3 6.95 7.5 7.5-5.2.55-6.95 2.3-7.5 7.5-.55-5.2-2.3-6.95-7.5-7.5 5.2-.55 6.95-2.3 7.5-7.5z"/><path d="M19 14.5c.2 1.9.85 2.55 2.75 2.75-1.9.2-2.55.85-2.75 2.75-.2-1.9-.85-2.55-2.75-2.75 1.9-.2 2.55-.85 2.75-2.75z"/></svg>
+          </span>
+          <span class="font-heading text-xl font-600">Polaris</span>
+        </div>
+        <p class="mt-4 max-w-sm text-inksoft font-500">Il doposcuola che fa crescere ragazzi sereni, autonomi e curiosi. Nel cuore di Bolzano, dal 2014.</p>
+      </div>
+      <div>
+        <h3 class="font-700 mb-3">Esplora</h3>
+        <ul class="space-y-2 text-inksoft font-500">
+          <li><a href="#programmi" class="hover:text-indigo">Programmi</a></li>
+          <li><a href="#metodo" class="hover:text-indigo">Metodo</a></li>
+          <li><a href="#prezzi" class="hover:text-indigo">Rette</a></li>
+          <li><a href="#faq" class="hover:text-indigo">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-700 mb-3">Contatti</h3>
+        <ul class="space-y-2 text-inksoft font-500">
+          <li>Centro città, Bolzano (BZ)</li>
+          <li>+39 0471 000 000</li>
+          <li>ciao@polaris-bz.it</li>
+          <li>Lun–Ven · 12:30–18:30</li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-8 pt-6 border-t border-indigo-wash flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-inksoft font-500">
+      <p>© 2026 Polaris Doposcuola · P.IVA 0000000000</p>
+      <p>Fatto con cura a Bolzano · Alto Adige / Südtirol</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to top -->
+<button id="toTop" aria-label="Torna su" class="fixed bottom-20 sm:bottom-5 right-5 z-40 grid h-12 w-12 place-items-center rounded-full bg-indigo text-white shadow-float cursor-pointer hover:brightness-110">
+  <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<!-- Barra CTA fissa (solo mobile) -->
+<div id="mobileCta" class="sm:hidden fixed inset-x-3 bottom-3 z-40">
+  <a href="#contatti" class="flex items-center justify-center gap-2 rounded-clay bg-indigo text-white font-700 py-3.5 shadow-float">
+    Prenota una prova gratuita
+    <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+  </a>
+</div>
+
+<script>
+  // Mobile menu
+  const toggle = document.getElementById('navToggle');
+  const menu = document.getElementById('mobileMenu');
+  toggle.addEventListener('click', () => {
+    const open = menu.classList.toggle('hidden') === false;
+    toggle.setAttribute('aria-expanded', String(open));
+  });
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    menu.classList.add('hidden'); toggle.setAttribute('aria-expanded','false');
+  }));
+
+  // Theme toggle (dark / light)
+  const themeToggle = document.getElementById('themeToggle');
+  themeToggle.addEventListener('click', () => {
+    const isDark = document.documentElement.classList.toggle('dark');
+    try { localStorage.setItem('theme', isDark ? 'dark' : 'light'); } catch (e) {}
+  });
+
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  if (reduce || !('IntersectionObserver' in window)) {
+    revealEls.forEach(el => el.classList.add('in'));
+  } else {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.14, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(el => io.observe(el));
+  }
+
+  // Animated counters
+  const counters = document.querySelectorAll('.count');
+  const runCount = (el) => {
+    const to = +el.dataset.to; const dur = 1400; const start = performance.now();
+    const tick = (now) => {
+      const p = Math.min((now - start) / dur, 1);
+      const eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(to * eased).toLocaleString('it-IT');
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  };
+  if (reduce) {
+    counters.forEach(el => el.textContent = (+el.dataset.to).toLocaleString('it-IT'));
+  } else {
+    const co = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { runCount(e.target); co.unobserve(e.target); } });
+    }, { threshold: 0.6 });
+    counters.forEach(el => co.observe(el));
+  }
+
+  /* =====================================================================
+     PRENOTAZIONI → Google Calendar + Google Drive (Sheet)
+     Incolla qui sotto l'URL del Web App di Google Apps Script
+     (vedi SETUP-PRENOTAZIONI.md). Finché resta vuoto, il form funziona
+     in modalità "fallback" aprendo una email precompilata.
+     ===================================================================== */
+  const BOOKING_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxtYAcIbhMOG8HCTbE-q901JScrjWOzgyEl8SC5nUj29CwrwyusyfsgJyR_GkPDkqZyZg/exec';
+  const BOOKING_EMAIL    = 'ciao@polaris-bz.it';
+
+  const form = document.getElementById('iscrizioneForm');
+  const msg = document.getElementById('formMsg');
+  const submitBtn = document.getElementById('submitBtn');
+  const submitLabel = document.getElementById('submitLabel');
+  const spinner = document.getElementById('spinner');
+  const dataInput = document.getElementById('data');
+
+  // Solo da oggi in poi
+  if (dataInput) {
+    const today = new Date(); today.setMinutes(today.getMinutes() - today.getTimezoneOffset());
+    dataInput.min = today.toISOString().split('T')[0];
+  }
+
+  // Disponibilità in tempo reale (legge gli slot occupati dal Calendar)
+  const slotGroup = document.getElementById('slotGroup');
+  const slotMsg = document.createElement('p');
+  slotMsg.className = 'mt-1.5 text-xs text-inksoft font-500';
+  if (slotGroup) slotGroup.after(slotMsg);
+
+  async function loadAvailability(date) {
+    if (!BOOKING_ENDPOINT || !date || !slotGroup) return;
+    const radios = slotGroup.querySelectorAll('input[name="slot"]');
+    radios.forEach(i => { i.disabled = false; });
+    slotMsg.classList.remove('text-coral');
+    slotMsg.textContent = 'Controllo disponibilità…';
+    try {
+      const res = await fetch(BOOKING_ENDPOINT + '?date=' + encodeURIComponent(date));
+      const out = await res.json();
+      const busy = (out && out.busy) || [];
+      let free = 0;
+      radios.forEach(i => {
+        const taken = busy.indexOf(i.value) !== -1;
+        i.disabled = taken;
+        if (taken && i.checked) i.checked = false;
+        if (!taken) free++;
+      });
+      if (free === 0) { slotMsg.textContent = 'Nessuna fascia libera in questo giorno — provane un altro.'; slotMsg.classList.add('text-coral'); }
+      else { slotMsg.textContent = free + ' fasce disponibili in questo giorno.'; }
+    } catch (err) {
+      slotMsg.textContent = '';
+    }
+  }
+  if (dataInput) dataInput.addEventListener('change', () => loadAvailability(dataInput.value));
+
+  function showMsg(text, ok) {
+    msg.textContent = text;
+    msg.classList.remove('hidden', 'text-mint', 'text-coral');
+    msg.classList.add(ok ? 'text-mint' : 'text-coral');
+  }
+  function setLoading(on) {
+    submitBtn.disabled = on;
+    spinner.classList.toggle('hidden', !on);
+    submitLabel.textContent = on ? 'Invio in corso…' : 'Prenota la prova gratuita';
+  }
+  function mailtoFallback(p) {
+    const subj = encodeURIComponent('Richiesta prova gratuita – ' + p.nome);
+    const body = encodeURIComponent(
+      'Nome: ' + p.nome + '\nTelefono: ' + p.telefono + '\nEmail: ' + p.email +
+      '\nClasse: ' + p.classe + '\nGiorno: ' + p.data + '\nOrario: ' + p.slot +
+      '\nMessaggio: ' + p.messaggio);
+    window.location.href = 'mailto:' + BOOKING_EMAIL + '?subject=' + subj + '&body=' + body;
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+
+    const payload = {
+      nome:      form.nome.value.trim(),
+      telefono:  form.telefono.value.trim(),
+      email:     form.email.value.trim(),
+      classe:    form.classe.value.trim(),
+      data:      form.data.value,
+      slot:      (form.querySelector('input[name="slot"]:checked') || {}).value || '',
+      messaggio: form.messaggio.value.trim(),
+      origine:   'Sito Polaris'
+    };
+
+    // Fallback se l'endpoint non è ancora configurato
+    if (!BOOKING_ENDPOINT) {
+      showMsg('Apriamo la tua email per inviare la richiesta…', true);
+      mailtoFallback(payload);
+      return;
+    }
+
+    setLoading(true);
+    try {
+      const res = await fetch(BOOKING_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' }, // evita il preflight CORS
+        body: JSON.stringify(payload)
+      });
+      const out = await res.json().catch(() => ({}));
+      if (res.ok && out.ok) {
+        showMsg('Prenotazione ricevuta! Ti aspettiamo il ' + payload.data + ' alle ' + payload.slot + '. ★', true);
+        form.reset();
+      } else {
+        throw new Error(out.error || 'Errore');
+      }
+    } catch (err) {
+      showMsg('Ops, qualcosa è andato storto. Ti apriamo una email per completare.', false);
+      setTimeout(() => mailtoFallback(payload), 800);
+    } finally {
+      setLoading(false);
+    }
+  });
+
+  /* ---------- Miglioramenti UI/UX ---------- */
+  // Navbar ombra allo scroll + back-to-top
+  const navbar = document.getElementById('navbar');
+  const toTop = document.getElementById('toTop');
+  const onScroll = () => {
+    const y = window.scrollY;
+    navbar.classList.toggle('scrolled', y > 20);
+    toTop.classList.toggle('show', y > 600);
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+  toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' }));
+
+  // Scrollspy: evidenzia la voce di menu della sezione visibile
+  const navLinks = Array.from(document.querySelectorAll('#navlinks a[href^="#"]'));
+  const linkFor = {};
+  navLinks.forEach(a => { linkFor[a.getAttribute('href').slice(1)] = a; });
+  const spyTargets = Object.keys(linkFor).map(id => document.getElementById(id)).filter(Boolean);
+  if ('IntersectionObserver' in window && spyTargets.length) {
+    const spy = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          navLinks.forEach(a => a.classList.remove('nav-active'));
+          if (linkFor[e.target.id]) linkFor[e.target.id].classList.add('nav-active');
+        }
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    spyTargets.forEach(t => spy.observe(t));
+  }
+
+  // Nascondi la barra CTA mobile quando si è già sui contatti
+  const mobileCta = document.getElementById('mobileCta');
+  const contatti = document.getElementById('contatti');
+  if (mobileCta && contatti && 'IntersectionObserver' in window) {
+    const ctaObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => mobileCta.classList.toggle('hide', e.isIntersecting));
+    }, { threshold: 0.2 });
+    ctaObs.observe(contatti);
+  }
+
+  // Esc chiude il menu mobile
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !menu.classList.contains('hidden')) {
+      menu.classList.add('hidden'); toggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+</script>
+
+</body>
+</html>
