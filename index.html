@@ -174,6 +174,17 @@
   .faq-chevron { transition: transform .25s ease; }
 
   *:focus-visible { outline: 3px solid var(--ring); outline-offset: 3px; border-radius: 8px; }
+  /* Focus sempre visibile sui campi (vince su outline-none di Tailwind) */
+  input:focus-visible, textarea:focus-visible { outline: 3px solid var(--ring) !important; outline-offset: 2px; }
+
+  /* Leggibilità: gli ancoraggi non finiscono sotto la navbar fissa */
+  section[id] { scroll-margin-top: 110px; }
+  p { text-wrap: pretty; line-height: 1.65; }
+  h1, h2, h3 { text-wrap: balance; }
+  ::selection { background: rgb(var(--c-indigo) / .22); }
+
+  /* Campo honeypot anti-spam: invisibile agli umani */
+  .hp-field { position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden; }
 
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
@@ -203,6 +214,7 @@
       <a href="#programmi" class="px-3 py-2 rounded-claysm hover:text-indigo hover:bg-indigo-wash transition">Programmi</a>
       <a href="#metodo"    class="px-3 py-2 rounded-claysm hover:text-indigo hover:bg-indigo-wash transition">Metodo</a>
       <a href="#team"      class="px-3 py-2 rounded-claysm hover:text-indigo hover:bg-indigo-wash transition">Team</a>
+      <a href="#online"    class="px-3 py-2 rounded-claysm hover:text-indigo hover:bg-indigo-wash transition">Online</a>
       <a href="#risultati" class="px-3 py-2 rounded-claysm hover:text-indigo hover:bg-indigo-wash transition">Risultati</a>
       <a href="#prezzi"    class="px-3 py-2 rounded-claysm hover:text-indigo hover:bg-indigo-wash transition">Rette</a>
       <a href="#faq"       class="px-3 py-2 rounded-claysm hover:text-indigo hover:bg-indigo-wash transition">FAQ</a>
@@ -227,6 +239,7 @@
     <a href="#programmi" class="block px-4 py-3 rounded-claysm hover:bg-indigo-wash">Programmi</a>
     <a href="#metodo"    class="block px-4 py-3 rounded-claysm hover:bg-indigo-wash">Metodo</a>
     <a href="#team"      class="block px-4 py-3 rounded-claysm hover:bg-indigo-wash">Team</a>
+    <a href="#online"    class="block px-4 py-3 rounded-claysm hover:bg-indigo-wash">Lezioni online</a>
     <a href="#risultati" class="block px-4 py-3 rounded-claysm hover:bg-indigo-wash">Risultati</a>
     <a href="#prezzi"    class="block px-4 py-3 rounded-claysm hover:bg-indigo-wash">Rette</a>
     <a href="#faq"       class="block px-4 py-3 rounded-claysm hover:bg-indigo-wash">FAQ</a>
@@ -318,11 +331,11 @@
     <div class="marquee text-inksoft/70 font-700 font-heading text-lg">
       <span class="flex gap-12 pr-12">
         <span>★ Docenti di ruolo e abilitati</span><span>★ Psicologi</span><span>★ Educatori qualificati</span><span>★ Bilingue IT / DE</span>
-        <span>★ Supporto BES &amp; DSA</span><span>★ Aperto fino alle 18:30</span><span>★ Spazi sicuri e luminosi</span>
+        <span>★ Supporto BES &amp; DSA</span><span>★ Lezioni anche online</span><span>★ Aperto fino alle 18:30</span><span>★ Spazi sicuri e luminosi</span>
       </span>
       <span class="flex gap-12 pr-12" aria-hidden="true">
         <span>★ Docenti di ruolo e abilitati</span><span>★ Psicologi</span><span>★ Educatori qualificati</span><span>★ Bilingue IT / DE</span>
-        <span>★ Supporto BES &amp; DSA</span><span>★ Aperto fino alle 18:30</span><span>★ Spazi sicuri e luminosi</span>
+        <span>★ Supporto BES &amp; DSA</span><span>★ Lezioni anche online</span><span>★ Aperto fino alle 18:30</span><span>★ Spazi sicuri e luminosi</span>
       </span>
     </div>
   </section>
@@ -560,6 +573,33 @@
     </div>
   </section>
 
+  <!-- ============ LEZIONI ONLINE ============ -->
+  <section id="online" class="px-4 py-20 md:py-28">
+    <div class="mx-auto max-w-6xl rounded-clay bg-surface shadow-clay p-7 sm:p-10 relative overflow-hidden">
+      <div class="blob anim-floaty bg-sky/30 h-32 w-32 -left-8 -bottom-8 hidden sm:block"></div>
+      <div class="relative grid gap-10 md:grid-cols-2 md:items-center">
+        <div>
+          <span class="font-700 uppercase tracking-wider text-sm mark mark-sky">Novità · Lezioni online</span>
+          <h2 class="mt-3 font-heading font-700 text-4xl md:text-5xl leading-tight">Studia con noi, anche da casa</h2>
+          <p class="mt-4 text-lg text-inksoft font-500">Non puoi raggiungerci? Nessun problema. Le lezioni online ti danno lo stesso educatore, lo stesso metodo e la stessa attenzione, comodamente in videochiamata.</p>
+          <ul class="mt-6 grid gap-3 sm:grid-cols-2 font-500 text-ink">
+            <li class="flex gap-2"><span class="text-mint">✓</span> Videolezioni 1:1 o in piccolo gruppo</li>
+            <li class="flex gap-2"><span class="text-mint">✓</span> Lavagna condivisa e materiali digitali</li>
+            <li class="flex gap-2"><span class="text-mint">✓</span> Ideali se abiti lontano o sei a casa</li>
+            <li class="flex gap-2"><span class="text-mint">✓</span> Bilingue IT/DE, su tutte le materie</li>
+          </ul>
+          <a href="#contatti" class="btn-clay mt-8 inline-flex items-center gap-2 rounded-clay bg-indigo text-white font-700 px-6 py-3.5 shadow-float hover:shadow-claysm cursor-pointer">
+            Prenota una lezione online
+            <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+        <div class="ph rounded-clay shadow-float overflow-hidden aspect-[4/3] rotate-1">
+          <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=900&q=70" alt="Lezione online in videochiamata" loading="lazy" onerror="this.style.display='none'" />
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ RISULTATI / PRIMA-DOPO ============ -->
   <section id="risultati" class="px-4 py-20 md:py-28">
     <div class="mx-auto max-w-6xl">
@@ -757,6 +797,14 @@ A chi è rivolto il doposcuola?
           </summary>
           <p class="mt-3 text-inksoft font-500">Certo! Offriamo una giornata di prova gratuita e senza impegno, così tuo figlio può conoscere gli spazi e gli educatori.</p>
         </details>
+
+        <details class="reveal rounded-clay bg-surface shadow-claysm p-6 open:shadow-clay">
+          <summary class="flex items-center justify-between gap-4 font-heading text-lg font-600">
+            Fate anche lezioni online?
+            <svg class="faq-chevron h-6 w-6 text-indigo shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <p class="mt-3 text-inksoft font-500">Sì! Offriamo videolezioni individuali e in piccolo gruppo, con lavagna condivisa e materiali digitali: stesso metodo e stessi educatori, ovunque tu sia. Basta scegliere "Online" quando prenoti.</p>
+        </details>
       </div>
     </div>
   </section>
@@ -783,24 +831,37 @@ A chi è rivolto il doposcuola?
             <div class="grid gap-4 sm:grid-cols-2">
               <div>
                 <label for="nome" class="block text-sm font-700 mb-1.5">Nome e cognome</label>
-                <input id="nome" name="nome" type="text" required placeholder="Mario Rossi"
+                <input id="nome" name="nome" type="text" required maxlength="80" placeholder="Mario Rossi"
                        class="w-full rounded-claysm bg-cream px-4 py-3 font-500 shadow-claypress placeholder:text-inksoft/60 focus:outline-none" />
               </div>
               <div>
                 <label for="telefono" class="block text-sm font-700 mb-1.5">Telefono</label>
-                <input id="telefono" name="telefono" type="tel" required placeholder="+39 333 1234567"
+                <input id="telefono" name="telefono" type="tel" required maxlength="30" placeholder="+39 333 1234567"
                        class="w-full rounded-claysm bg-cream px-4 py-3 font-500 shadow-claypress placeholder:text-inksoft/60 focus:outline-none" />
               </div>
             </div>
             <div>
               <label for="email" class="block text-sm font-700 mb-1.5">Email</label>
-              <input id="email" name="email" type="email" required placeholder="mario@email.it"
+              <input id="email" name="email" type="email" required maxlength="120" placeholder="mario@email.it"
                      class="w-full rounded-claysm bg-cream px-4 py-3 font-500 shadow-claypress placeholder:text-inksoft/60 focus:outline-none" />
             </div>
             <div>
               <label for="classe" class="block text-sm font-700 mb-1.5">Classe del ragazzo/a</label>
-              <input id="classe" name="classe" type="text" placeholder="es. 2ª media o 1ª superiore"
+              <input id="classe" name="classe" type="text" maxlength="40" placeholder="es. 2ª media o 1ª superiore"
                      class="w-full rounded-claysm bg-cream px-4 py-3 font-500 shadow-claypress placeholder:text-inksoft/60 focus:outline-none" />
+            </div>
+            <div>
+              <span class="block text-sm font-700 mb-1.5">Modalità</span>
+              <div role="radiogroup" aria-label="Modalità della prova" class="grid grid-cols-2 gap-2">
+                <label class="cursor-pointer">
+                  <input type="radio" name="modalita" value="In sede" class="peer sr-only" checked />
+                  <span class="block text-center rounded-claysm bg-cream px-2 py-2.5 text-sm font-700 shadow-claypress peer-checked:bg-indigo peer-checked:text-white transition">In sede a Bolzano</span>
+                </label>
+                <label class="cursor-pointer">
+                  <input type="radio" name="modalita" value="Online" class="peer sr-only" />
+                  <span class="block text-center rounded-claysm bg-cream px-2 py-2.5 text-sm font-700 shadow-claypress peer-checked:bg-indigo peer-checked:text-white transition">Online</span>
+                </label>
+              </div>
             </div>
             <div>
               <label for="data" class="block text-sm font-700 mb-1.5">Giorno preferito <span class="text-inksoft font-500">(lun–ven)</span></label>
@@ -830,8 +891,12 @@ A chi è rivolto il doposcuola?
             </div>
             <div>
               <label for="messaggio" class="block text-sm font-700 mb-1.5">Messaggio <span class="text-inksoft font-500">(facoltativo)</span></label>
-              <textarea id="messaggio" name="messaggio" rows="2" placeholder="Raccontaci di cosa avete bisogno…"
+              <textarea id="messaggio" name="messaggio" rows="2" maxlength="500" placeholder="Raccontaci di cosa avete bisogno…"
                         class="w-full rounded-claysm bg-cream px-4 py-3 font-500 shadow-claypress placeholder:text-inksoft/60 focus:outline-none resize-none"></textarea>
+            </div>
+            <div class="hp-field" aria-hidden="true">
+              <label for="website">Non compilare questo campo</label>
+              <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
             </div>
             <label class="flex items-start gap-2.5 text-sm text-inksoft font-500">
               <input id="privacy" name="privacy" type="checkbox" required class="mt-0.5 h-4 w-4 rounded accent-indigo cursor-pointer" />
@@ -1030,6 +1095,14 @@ A chi è rivolto il doposcuola?
     e.preventDefault();
     if (!form.checkValidity()) { form.reportValidity(); return; }
 
+    // Honeypot anti-spam: i bot compilano il campo nascosto, gli umani no
+    if (form.website && form.website.value) {
+      showMsg('Grazie! Ti ricontatteremo presto. ★', true);
+      form.reset();
+      return;
+    }
+
+    const modalita = (form.querySelector('input[name="modalita"]:checked') || {}).value || 'In sede';
     const payload = {
       nome:      form.nome.value.trim(),
       telefono:  form.telefono.value.trim(),
@@ -1037,7 +1110,8 @@ A chi è rivolto il doposcuola?
       classe:    form.classe.value.trim(),
       data:      form.data.value,
       slot:      (form.querySelector('input[name="slot"]:checked') || {}).value || '',
-      messaggio: form.messaggio.value.trim(),
+      modalita:  modalita,
+      messaggio: ('[' + modalita.toUpperCase() + '] ' + form.messaggio.value.trim()).trim(),
       origine:   'Sito Polaris'
     };
 
