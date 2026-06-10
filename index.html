@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Polaris · Doposcuola a Bolzano — Compiti, Materie & Crescita</title>
 <meta name="description" content="Doposcuola di qualità a Bolzano (Alto Adige). Aiuto compiti bilingue italiano/tedesco, laboratori creativi, supporto BES e tutte le materie. Per ragazzi delle medie e superiori." />
-<meta name="theme-color" content="#FFF6EC" />
+<meta name="theme-color" content="#FFFFFF" />
 
 <!-- Open Graph -->
 <meta property="og:title" content="Polaris · Doposcuola a Bolzano" />
@@ -65,21 +65,21 @@
 <style>
   :root {
     --c-surface: 255 255 255; --c-cream: 243 242 247; --c-ink: 24 22 38; --c-inksoft: 84 82 107;
-    --c-indigo: 79 70 229; --c-indigo-soft: 124 115 242; --c-indigo-wash: 236 235 255;
-    --c-coral: 251 90 126; --c-coral-wash: 255 227 234;
+    --c-indigo: 200 16 46; --c-indigo-soft: 226 75 96; --c-indigo-wash: 251 233 236;
+    --c-coral: 230 57 70; --c-coral-wash: 252 231 233;
     --c-sun: 245 165 36; --c-sun-wash: 252 239 210;
     --c-mint: 16 185 129; --c-mint-wash: 213 243 232;
     --c-sky: 45 166 240; --c-sky-wash: 219 239 253;
-    --ring: #4F46E5;
+    --ring: #C8102E;
   }
   .dark {
     --c-surface: 30 28 46; --c-cream: 42 39 64; --c-ink: 237 236 244; --c-inksoft: 166 164 188;
-    --c-indigo: 99 89 236; --c-indigo-soft: 154 146 250; --c-indigo-wash: 49 46 92;
-    --c-coral: 251 122 150; --c-coral-wash: 74 38 52;
+    --c-indigo: 235 90 108; --c-indigo-soft: 245 135 150; --c-indigo-wash: 76 24 33;
+    --c-coral: 240 110 122; --c-coral-wash: 74 30 36;
     --c-sun: 245 178 70; --c-sun-wash: 74 60 30;
     --c-mint: 30 211 154; --c-mint-wash: 22 64 54;
     --c-sky: 77 184 245; --c-sky-wash: 22 60 86;
-    --ring: #7C73F2;
+    --ring: #F58796;
   }
   html { scroll-behavior: smooth; }
   body { background: var(--bg); }
@@ -87,16 +87,16 @@
   /* Soft animated gradient mesh background */
   /* Sfondo pulito e chiaro con bagliori leggerissimi */
   .mesh-bg {
-    background-color: #F8F8FC;
+    background-color: #FFFFFF;
     background-image:
-      radial-gradient(at 15% 6%, rgba(79,70,229,0.06) 0px, transparent 40%),
-      radial-gradient(at 88% 92%, rgba(16,185,129,0.05) 0px, transparent 42%);
+      radial-gradient(at 15% 6%, rgba(200,16,46,0.05) 0px, transparent 40%),
+      radial-gradient(at 88% 92%, rgba(200,16,46,0.04) 0px, transparent 42%);
   }
   .dark .mesh-bg {
-    background-color: #131120;
+    background-color: #17121A;
     background-image:
-      radial-gradient(at 15% 6%, rgba(124,115,242,0.14) 0px, transparent 42%),
-      radial-gradient(at 85% 92%, rgba(16,185,129,0.10) 0px, transparent 42%);
+      radial-gradient(at 15% 6%, rgba(235,90,108,0.13) 0px, transparent 42%),
+      radial-gradient(at 85% 92%, rgba(235,90,108,0.08) 0px, transparent 42%);
   }
   .dark .grain::after { opacity: .07; }
   .dark .shadow-clay   { box-shadow: 0 18px 40px -16px rgba(0,0,0,0.65); }
@@ -186,6 +186,13 @@
   /* Campo honeypot anti-spam: invisibile agli umani */
   .hp-field { position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden; }
 
+  /* Footer rosso provinciale (bianco/rosso BZ) */
+  footer > div { background: rgb(var(--c-indigo)); color: #fff; }
+  footer .text-inksoft { color: rgba(255,255,255,.85); }
+  footer a:hover { color: #fff; text-decoration: underline; }
+  footer .border-indigo-wash { border-color: rgba(255,255,255,.3); }
+  footer .bg-indigo { background: #fff; color: rgb(var(--c-indigo)); }
+
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     .anim-floaty,.anim-floaty2,.anim-floaty3,.rise,.marquee { animation: none !important; }
@@ -218,6 +225,7 @@
       <a href="#risultati" class="px-3 py-2 rounded-claysm hover:text-indigo hover:bg-indigo-wash transition">Risultati</a>
       <a href="#prezzi"    class="px-3 py-2 rounded-claysm hover:text-indigo hover:bg-indigo-wash transition">Rette</a>
       <a href="#faq"       class="px-3 py-2 rounded-claysm hover:text-indigo hover:bg-indigo-wash transition">FAQ</a>
+      <a href="#candidati" class="px-3 py-2 rounded-claysm hover:text-indigo hover:bg-indigo-wash transition">Candidati</a>
     </div>
 
     <div class="flex items-center gap-2">
@@ -243,6 +251,7 @@
     <a href="#risultati" class="block px-4 py-3 rounded-claysm hover:bg-indigo-wash">Risultati</a>
     <a href="#prezzi"    class="block px-4 py-3 rounded-claysm hover:bg-indigo-wash">Rette</a>
     <a href="#faq"       class="block px-4 py-3 rounded-claysm hover:bg-indigo-wash">FAQ</a>
+    <a href="#candidati" class="block px-4 py-3 rounded-claysm hover:bg-indigo-wash">Lavora con noi</a>
     <a href="#contatti"  class="mt-2 block text-center px-4 py-3 rounded-claysm bg-coral text-white font-700">Iscriviti ora</a>
   </div>
 </header>
@@ -274,8 +283,8 @@
         </h1>
 
         <p class="rise d3 mt-7 max-w-xl mx-auto lg:mx-0 text-lg md:text-xl text-inksoft font-500">
-          Un doposcuola sereno e stimolante a Bolzano: aiuto compiti in italiano e tedesco,
-          supporto per i Bisogni Educativi Speciali e tutte le materie principali. I tuoi figli crescono autonomi e felici.
+          Compiti fatti, un metodo che resta e più fiducia in sé.
+          A Bolzano o online, in italiano e tedesco, per le medie e le superiori.
         </p>
 
         <div class="rise d4 mt-9 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3">
@@ -809,6 +818,34 @@ A chi è rivolto il doposcuola?
     </div>
   </section>
 
+  <!-- ============ LAVORA CON NOI ============ -->
+  <section id="candidati" class="px-4 py-20 md:py-28">
+    <div class="mx-auto max-w-6xl rounded-clay bg-surface shadow-clay p-7 sm:p-10 relative overflow-hidden">
+      <div class="blob anim-floaty2 bg-coral/25 h-32 w-32 -right-8 -top-8 hidden sm:block"></div>
+      <div class="relative grid gap-10 md:grid-cols-[1.4fr_1fr] md:items-center">
+        <div>
+          <span class="font-700 uppercase tracking-wider text-sm mark mark-coral">Lavora con noi</span>
+          <h2 class="mt-3 font-heading font-700 text-4xl md:text-5xl leading-tight">Fai parte del nostro team</h2>
+          <p class="mt-4 text-lg text-inksoft font-500">Cerchiamo persone che amano insegnare e credono nei ragazzi. Se ti riconosci, vogliamo conoscerti.</p>
+          <ul class="mt-6 flex flex-wrap gap-3">
+            <li class="inline-flex items-center gap-2 rounded-claysm bg-indigo-wash text-ink font-700 px-4 py-2 shadow-claysm"><span class="h-2.5 w-2.5 rounded-full bg-indigo"></span>Docenti ed educatori</li>
+            <li class="inline-flex items-center gap-2 rounded-claysm bg-mint-wash text-ink font-700 px-4 py-2 shadow-claysm"><span class="h-2.5 w-2.5 rounded-full bg-mint"></span>Psicologi</li>
+            <li class="inline-flex items-center gap-2 rounded-claysm bg-sun-wash text-ink font-700 px-4 py-2 shadow-claysm"><span class="h-2.5 w-2.5 rounded-full bg-sun"></span>Studenti universitari e tirocinanti</li>
+          </ul>
+        </div>
+        <div class="rounded-clay bg-indigo-wash p-7 text-center shadow-claysm">
+          <p class="font-heading text-2xl font-700">Candidati in 2 minuti</p>
+          <p class="mt-2 text-inksoft font-500">Scrivici due righe su di te e allega il CV.</p>
+          <a href="mailto:ciao@polaris-bz.it?subject=Candidatura%20Polaris" class="btn-clay mt-5 inline-flex w-full justify-center items-center gap-2 rounded-claysm bg-indigo text-white font-700 px-5 py-3 shadow-float hover:shadow-claysm cursor-pointer">
+            Candidati ora
+            <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <p class="mt-3 text-xs text-inksoft font-500">Ti rispondiamo entro pochi giorni, promesso.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ CONTATTI / CTA ============ -->
   <section id="contatti" class="px-4 py-20 md:py-28">
     <div class="mx-auto max-w-5xl rounded-clay bg-indigo shadow-float p-7 sm:p-12 text-white relative overflow-hidden">
@@ -934,6 +971,7 @@ A chi è rivolto il doposcuola?
           <li><a href="#metodo" class="hover:text-indigo">Metodo</a></li>
           <li><a href="#prezzi" class="hover:text-indigo">Rette</a></li>
           <li><a href="#faq" class="hover:text-indigo">FAQ</a></li>
+          <li><a href="#candidati" class="hover:text-indigo">Lavora con noi</a></li>
         </ul>
       </div>
       <div>
