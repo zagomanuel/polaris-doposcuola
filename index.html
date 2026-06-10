@@ -186,12 +186,13 @@
   /* Campo honeypot anti-spam: invisibile agli umani */
   .hp-field { position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden; }
 
-  /* Footer rosso provinciale (bianco/rosso BZ) */
-  footer > div { background: rgb(var(--c-indigo)); color: #fff; }
+  /* Footer rosso provinciale (bianco/rosso BZ).
+     !important: deve vincere sulle utility Tailwind (bg-surface, hover:text-indigo) */
+  footer > div { background: rgb(var(--c-indigo)) !important; color: #fff; }
   footer .text-inksoft { color: rgba(255,255,255,.85); }
-  footer a:hover { color: #fff; text-decoration: underline; }
+  footer a:hover { color: #fff !important; text-decoration: underline; }
   footer .border-indigo-wash { border-color: rgba(255,255,255,.3); }
-  footer .bg-indigo { background: #fff; color: rgb(var(--c-indigo)); }
+  footer span.bg-indigo { background: #fff !important; color: rgb(var(--c-indigo)) !important; }
 
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
